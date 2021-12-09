@@ -22,7 +22,20 @@
 */
 
 #include <fstream>
-#include <experimental/filesystem>
+#ifndef __has_include
+  static_assert(false, "__has_include not supported");
+#else
+#  if __cplusplus >= 201703L && __has_include(<filesystem>)
+#    include <filesystem>
+     namespace fs = std::filesystem;
+#  elif __has_include(<experimental/filesystem>)
+#    include <experimental/filesystem>
+     namespace fs = std::experimental::filesystem;
+#  elif __has_include(<boost/filesystem.hpp>)
+#    include <boost/filesystem.hpp>
+     namespace fs = boost::filesystem;
+#  endif
+#endif
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -65,9 +78,9 @@ void generateFinalFile(string fileName, string titleName, bool lang)
     if (fWithoutLang.find('/') != string::npos)
     {
         string dir = fWithoutLang.substr(0, fWithoutLang.find('/'));
-        if (!std::filesystem::exists(LOCATION + "/" + (lang ? "zh" : "en") + "/" + dir))
+        if (!fs::exists(LOCATION + "/" + (lang ? "zh" : "en") + "/" + dir))
         {
-            std::filesystem::create_directory(LOCATION + "/" + (lang ? "zh" : "en") + "/" + dir);
+            fs::create_directory(LOCATION + "/" + (lang ? "zh" : "en") + "/" + dir);
         }
     }
     std::ofstream EachFile("./" + LOCATION + "/" + fileName + ".html");
@@ -125,10 +138,10 @@ int getAllTheNumbers(string str)
 
 void resetDir()
 {
-    std::filesystem::remove_all("./" + LOCATION + "/");
-    std::filesystem::create_directories("./" + LOCATION + "/");
-    std::filesystem::create_directories("./" + LOCATION + "/en/");
-    std::filesystem::create_directories("./" + LOCATION + "/zh/");
+    fs::remove_all("./" + LOCATION + "/");
+    fs::create_directories("./" + LOCATION + "/");
+    fs::create_directories("./" + LOCATION + "/en/");
+    fs::create_directories("./" + LOCATION + "/zh/");
 }
 
 int main()
@@ -219,7 +232,7 @@ int main()
         }
     }
     INFOread.close();
-    std::filesystem::copy("./static", "./" + LOCATION + "/static", std::filesystem::copy_options::recursive | std::filesystem::copy_options::overwrite_existing);
+    fs::copy("./static", "./" + LOCATION + "/static", fs::copy_options::recursive | fs::copy_options::overwrite_existing);
     auto end = std::chrono::system_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;
     std::time_t end_time = std::chrono::system_clock::to_time_t(end);
