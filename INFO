@@ -1,0 +1,139 @@
+^LOCATION
+0output
+
+^CSS4
+https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css
+/static/css/easeofuse.css
+/static/css/styles.css
+/static/css/ps.css
+
+^JS3
+https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js
+https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js
+/static/js/main.js
+
+#Home Page | Pottery Renaissance
+index
+
+#404 Not Found | Pottery Renaissance
+404
+
+en#Chinese History | Pottery Renaissance
+history/chinese
+
+zh#中國歷史 | 刻文煉藝～陶陶不絕
+history/chinese
+
+en#Taiwan History | Pottery Renaissance
+history/taiwan
+
+zh#台灣歷史 | Pottery Renaissance
+history/taiwan
+
+en#Clay | Pottery Renaissance
+about/clay
+
+zh#陶土 | 刻文煉藝～陶陶不絕
+about/clay
+
+en#Pottery Making Process | Pottery Renaissance
+about/making
+
+zh#製陶的過程 | 刻文煉藝～陶陶不絕
+about/making
+
+en#Pottery vs Ceramic vs Porcelain | Pottery Renaissance
+about/vscp
+
+zh#陶器vs陶瓷vs瓷器 | 刻文煉藝～陶陶不絕
+about/vscp
+
+en#Pottery vs Other Containers | Pottery Renaissance
+about/vsother
+
+zh#陶器vs其他容器 | 刻文煉藝～陶陶不絕
+about/vsother
+
+en#Advantages and Disadvantages of Pottery | Pottery Renaissance
+about/advantages
+
+zh#陶器的優點與缺點 | 刻文煉藝～陶陶不絕
+about/advantages
+
+en#Famous Works | Pottery Renaissance
+about/works
+
+zh#著名作品 | 刻文煉藝～陶陶不絕
+about/works
+
+en#Geographical Advantages of Yingge | Pottery Renaissance
+yingge/geo
+
+zh#鶯歌的地理優勢 | 刻文煉藝～陶陶不絕
+yingge/geo
+
+en#What makes Yingge Famous | Pottery Renaissance
+yingge/famous
+
+zh#鶯歌如何變有名 | 刻文煉藝～陶陶不絕
+yingge/famous
+
+en#Yingge Ceramics Museum | Pottery Renaissance
+ycm/index
+
+zh#鶯歌瓷瓷博物館 | 刻文煉藝～陶陶不絕
+ycm/index
+
+en#Public Artworks | Pottery Renaissance
+ycm/art
+
+zh#公共藝術 | 刻文煉藝～陶陶不絕
+ycm/art
+
+en#Interview with Curator Wu | Pottery Renaissance
+interview/curator
+
+zh#吳館長訪談 | 刻文煉藝～陶陶不絕
+interview/curator
+
+en#Interview with Potter Chan | Pottery Renaissance
+interview/potter
+
+zh#詹國祥師傅訪談 | 刻文煉藝～陶陶不絕
+interview/potter
+
+en#Survey Analysis | Pottery Renaissance
+analysis
+
+zh#問卷調查 | 刻文煉藝～陶陶不絕
+analysis
+
+en#Meeting Minutes | Pottery Renaissance
+path/minutes
+
+zh#會議紀錄 | 刻文煉藝～陶陶不絕
+path/minutes
+
+en#Photo Album | Pottery Renaissance
+path/album
+
+zh#相簿 | 刻文煉藝～陶陶不絕
+path/album
+
+en#Reflection | Pottery Renaissance
+conclusion/reflection
+
+zh#活動心得 | 刻文煉藝～陶陶不絕
+conclusion/reflection
+
+en#Our Team & Teachers | Pottery Renaissance
+conclusion/team
+
+zh#我們的團隊 & 指導老師 | 刻文煉藝～陶陶不絕
+conclusion/team
+
+en#Bibliography | Pottery Renaissance
+bibliography
+
+zh#參考資料 | 刻文煉藝～陶陶不絕
+bibliography
