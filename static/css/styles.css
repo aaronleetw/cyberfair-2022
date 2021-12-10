@@ -2,7 +2,12 @@
 * {
     box-sizing: border-box;
 }
-
+p {
+    line-height: 2;
+}
+footer p {
+    line-height: 1.75;
+}
 body {
     max-width: 100%;
     overflow-x: hidden;
@@ -15,16 +20,36 @@ body {
 h1, h2, h3, h4, h5, h6 {
     text-align: left;
 }
-
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 button:focus {
     outline: none;
 }
-
 nav div.buttons {
     position: fixed;
     right: 10px;
     top: 10px;
     z-index: 1;
+}
+div.rowofpics {
+    display: flex;
+    justify-content: space-between;
+}
+div.rowofpics img {
+    width: 28%;
+    height: auto;
+}
+img.fright {
+    float: right;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+img.fleft {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 10px;
 }
 .navbar-brand {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -77,30 +102,36 @@ nav div.buttons {
     font-weight: 400;
 }
 @media (min-width: 576px) {
-    .innerTitle h1, .innerTitle h2 {
+    .innerTitle h1, .innerTitle h2, .container {
         max-width: 540px;
     }
 }
 @media (min-width: 768px) {
-    .innerTitle h1, .innerTitle h2 {
+    .innerTitle h1, .innerTitle h2, .container {
         max-width: 720px;
     }
 }
 @media (min-width: 992px) {
-    .innerTitle h1, .innerTitle h2 {
+    .innerTitle h1, .innerTitle h2, .container {
         max-width: 960px;
     }
 }
 @media (min-width: 1220px) {
-    .innerTitle h1, .innerTitle h2 {
+    .innerTitle h1, .innerTitle h2, .container {
         max-width: 1140px;
     }
 }
 @media (min-width: 1440px) {
-    .innerTitle h1, .innerTitle h2 {
-        max-width: 1320px;
+    .innerTitle h1, .innerTitle h2, .container {
+        max-width: 1400px;
     }
 }
+@media (min-width: 1600px) {
+    .innerTitle h1, .innerTitle h2, .container {
+        max-width: 1560px;
+    }
+}
+    
 .innerTitle span.small {
     font-size: 60%;
 }
@@ -112,7 +143,7 @@ nav div.buttons {
 
 .col p {
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 img.center {
@@ -152,23 +183,23 @@ figcaption {
 
 figcaption.chinese02 {
     position: absolute;
+    top: 140px;
+    left: -75px;
     width: 160px;
     padding: 10px;
-}
-figcaption.chinese02 {
-    top: 140px;
-    left: -120px;
 }
 
 img.chinese06 {
     position: absolute;
-    top: -290px;
-    left: -80%;
-    width: 180%;
+    top: -300px;
+    left: -60%;
+    width: 150%;
 }
 figcaption.chinese06 {
     position: absolute;
-    width: 160%;
+    top: -20px;
+    left: 60%;
+    width: 120%;
 }
 #scrollTopBtn {
     width: 40px;
