@@ -188,8 +188,11 @@ figcaption.chinese02 {
     width: 160px;
     padding: 10px;
 }
-
-img.chinese06 {
+div.chinese06 {
+    position: absolute;
+    top: -200px;
+}
+/* img.chinese06 {
     position: absolute;
     top: -300px;
     left: -60%;
@@ -202,7 +205,7 @@ figcaption.chinese06 {
     left: 25%;
     width: 110%;
     z-index: 1;
-}
+} */
 #scrollTopBtn {
     width: 40px;
     height: 40px;
