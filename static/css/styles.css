@@ -194,12 +194,14 @@ img.chinese06 {
     top: -300px;
     left: -60%;
     width: 150%;
+    z-index: 0;
 }
 figcaption.chinese06 {
     position: absolute;
     top: -20px;
-    left: 60%;
-    width: 120%;
+    left: 25%;
+    width: 110%;
+    z-index: 1;
 }
 #scrollTopBtn {
     width: 40px;
