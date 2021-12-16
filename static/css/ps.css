@@ -2,34 +2,45 @@ body {
     --innerTitle: url('/static/img/innertitle/index.jpg');
     --header: url("/static/img/banner/generic/index.jpg")
 }
-body.index {
+body.index:not(body.zh) {
     --innerTitle: url('/static/img/innertitle/index.jpg');
     --header: url("/static/img/banner/index.jpg")
 }
-body.historychinese {
+body.en.historychinese {
     --innerTitle: url('/static/img/innertitle/chinese.jpg');
     --header: url("/static/img/banner/chinese.jpg")
 }
-body.historytaiwan {
+body.zh.historychinese {
+    --innerTitle: url('/static/img/innertitle/chinese.jpg');
+    --header: url("/static/img/banner/generic/chinese.jpg")
+}
+body.en.historytaiwan {
     --innerTitle: url('/static/img/innertitle/taiwan.jpg');
     --header: url("/static/img/banner/taiwan.jpg")
+}
+body.zh.historytaiwan {
+    --innerTitle: url('/static/img/innertitle/taiwan.jpg');
+    --header: url("/static/img/banner/generic/taiwan.jpg")
 }
 body.aboutclay, body.aboutvscp, body.aboutvsother, body.aboutadvantages, body.aboutmaking, body.aboutworks {
     --innerTitle: url('/static/img/innertitle/clay.jpg');
     --header: url("/static/img/banner/generic/clay.jpg")
 }
-body.aboutclay {
+body.zh.aboutclay {
+    --header: url("/static/img/banner/generic/clay.jpg")
+}
+body.en.aboutclay {
     --header: url("/static/img/banner/clay.jpg")
 }
 body.yinggegeo, body.yinggefamous {
     --innerTitle: url('/static/img/innertitle/ycm.jpg');
     --header: url("/static/img/banner/generic/ycm.jpg")
 }
-body.ycmindex {
+body.en.ycmindex {
     --innerTitle: url('/static/img/innertitle/ycm.jpg');
     --header: url("/static/img/banner/ycm.jpg")
 }
-body.ycmart {
+body.ycmart, body.zh.ycmindex {
     --innerTitle: url('/static/img/innertitle/ycm.jpg');
     --header: url("/static/img/banner/generic/ycm.jpg")
 }

@@ -96,7 +96,8 @@ void generateFinalFile(string fileName, string titleName, bool lang)
     string tmp = fWithoutLang;
     if (tmp.find('/') != string::npos)
         tmp = tmp.substr(0, tmp.find('/')) + tmp.substr(tmp.find('/') + 1);
-    EachFile << "</head><body class=\"" + tmp + "\">";
+    string langInStr = (lang ? "zh" : "en");
+    EachFile << "</head><body class=\"" + langInStr + " " + tmp + "\">";
     ifstream NAVread;
     if (lang)
         NAVread.open("NAVzh.html");

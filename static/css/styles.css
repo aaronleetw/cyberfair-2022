@@ -17,6 +17,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-smooth: always;
 }
+body.zh .navbar-brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+body.zh p:not(footer *), body.zh nav, body.zh .dropdown-item {
+    font-size: 120%;
+}
+body.zh header h1 {
+    font-weight: bolder;
+}
 h1, h2, h3, h4, h5, h6 {
     text-align: left;
 }
@@ -33,11 +43,14 @@ nav div.buttons {
     top: 10px;
     z-index: 1;
 }
+nav div.buttons button {
+    margin-left: 10px;
+}
 div.rowofpics {
     display: flex;
     justify-content: space-between;
 }
-div.rowofpics img {
+div.rowofpics img:not(.pic img), div.rowofpics .pic {
     width: 28%;
     height: auto;
 }
@@ -192,20 +205,9 @@ div.chinese06 {
     position: absolute;
     top: -200px;
 }
-/* img.chinese06 {
-    position: absolute;
-    top: -300px;
-    left: -60%;
-    width: 150%;
-    z-index: 0;
+iframe.pdfjs {
+    border: 2px solid black;
 }
-figcaption.chinese06 {
-    position: absolute;
-    top: -20px;
-    left: 25%;
-    width: 110%;
-    z-index: 1;
-} */
 #scrollTopBtn {
     width: 40px;
     height: 40px;
