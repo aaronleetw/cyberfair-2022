@@ -81,3 +81,9 @@ function clickedModal(lang) {
         location.href = "/zh/conclusion/team.html";
     }
 }
+
+function switchLang(lang) {
+    currPath = window.location.pathname.substring(0, 5) == "index" || window.location.pathname == '/' ? '/' : window.location.pathname.substring(3);
+    if (lang == 'en' && currPath == '/') { location.href = '/'; return; }
+    location.href = "/" + lang + currPath;
+}
