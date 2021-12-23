@@ -42,6 +42,7 @@ using namespace std;
 string CSS[100], JS[100], LOCATION = "docs";
 vector<pair<string, string>> enPAGE, zhPAGE, PAGE;
 int CSScount = 0, JScount = 0, enPAGEcount, zhPAGEcount, PAGEcount;
+bool hasResultsFile = true;
 
 std::string trim(const std::string& str,
                  const std::string& whitespace = " \t")
@@ -150,7 +151,7 @@ int main()
     auto start = std::chrono::system_clock::now();
     int readSmthing = 0, tempCSScnt, tempJScnt;
     string myText, tempTitleName;
-    ifstream INFOread("INFO");
+    ifstream INFOread(".ezhtml");
     while (getline(INFOread, myText))
     {
         if (readSmthing != 0)
@@ -231,30 +232,54 @@ int main()
             readSmthing = 5;
             tempTitleName = myText.substr(1);
         }
+        else if (myText == "-NORESULTSFILE") {
+            hasResultsFile = false;
+        }
     }
     INFOread.close();
     fs::copy("./static", "./" + LOCATION + "/static", fs::copy_options::recursive | fs::copy_options::overwrite_existing);
     auto end = std::chrono::system_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;
     std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-    std::ofstream ResultsFile("./" + LOCATION + "/results");
-    ResultsFile << "./" + LOCATION + "/ was generated successfully at " << ctime(&end_time);
-    ResultsFile << "elapsed time: " << elapsed_seconds.count() << "s" << endl
-                << endl;
-    ResultsFile << "JScount: " << JScount << "; CSScount: " << CSScount << endl;
+    if (hasResultsFile) {
+        std::ofstream ResultsFile("./" + LOCATION + "/results");
+        ResultsFile << "./" + LOCATION + "/ was generated successfully at " << ctime(&end_time);
+        ResultsFile << "elapsed time: " << elapsed_seconds.count() << "s" << endl
+                    << endl;
+        ResultsFile << "JScount: " << JScount << "; CSScount: " << CSScount << endl;
+        for (int i = 0; i < JScount; i++)
+            ResultsFile << "; JS[" << i << "]: " << JS[i] << endl;
+        for (int i = 0; i < CSScount; i++)
+            ResultsFile << "; CSS[" << i << "]: " << CSS[i] << endl;
+        ResultsFile << "\nEN Pages: \n";
+        for (int i = 0; i < enPAGEcount; i++)
+            ResultsFile << "; enPAGE[" << i << "]: " << enPAGE[i].first << "; TITLE: " << enPAGE[i].second << endl;
+        ResultsFile << "\nZH Pages: \n";
+        for (int i = 0; i < zhPAGEcount; i++)
+            ResultsFile << "; zhPAGE[" << i << "]: " << zhPAGE[i].first << "; TITLE: " << zhPAGE[i].second << endl;
+        ResultsFile << "\nREG Pages: \n";
+        for (int i = 0; i < PAGEcount; i++)
+            ResultsFile << "; PAGE[" << i << "]: " << PAGE[i].first << "; TITLE: " << PAGE[i].second << endl;
+        ResultsFile.close();
+    }
+    cout << "\n---------------------------------------------------------------------------------\n";
+    cout << "./" + LOCATION + "/ was generated successfully at " << ctime(&end_time);
+    cout << "elapsed time: " << elapsed_seconds.count() << "s" << endl;
+    if (!hasResultsFile) { cout << "No results file was generated.\n\n"; }
+    cout << "JScount: " << JScount << "; CSScount: " << CSScount << endl;
     for (int i = 0; i < JScount; i++)
-        ResultsFile << "; JS[" << i << "]: " << JS[i] << endl;
+        cout << "; JS[" << i << "]: " << JS[i] << endl;
     for (int i = 0; i < CSScount; i++)
-        ResultsFile << "; CSS[" << i << "]: " << CSS[i] << endl;
-    ResultsFile << "\nEN Pages: \n";
+        cout << "; CSS[" << i << "]: " << CSS[i] << endl;
+    cout << "\nEN Pages: \n";
     for (int i = 0; i < enPAGEcount; i++)
-        ResultsFile << "; enPAGE[" << i << "]: " << enPAGE[i].first << "; TITLE: " << enPAGE[i].second << endl;
-    ResultsFile << "\nZH Pages: \n";
+        cout << "; enPAGE[" << i << "]: " << enPAGE[i].first << "; TITLE: " << enPAGE[i].second << endl;
+    cout << "\nZH Pages: \n";
     for (int i = 0; i < zhPAGEcount; i++)
-        ResultsFile << "; zhPAGE[" << i << "]: " << zhPAGE[i].first << "; TITLE: " << zhPAGE[i].second << endl;
-    ResultsFile << "\nREG Pages: \n";
+        cout << "; zhPAGE[" << i << "]: " << zhPAGE[i].first << "; TITLE: " << zhPAGE[i].second << endl;
+    cout << "\nREG Pages: \n";
     for (int i = 0; i < PAGEcount; i++)
-        ResultsFile << "; PAGE[" << i << "]: " << PAGE[i].first << "; TITLE: " << PAGE[i].second << endl;
-    ResultsFile.close();
+        cout << "; PAGE[" << i << "]: " << PAGE[i].first << "; TITLE: " << PAGE[i].second << endl;
+    cout << "---------------------------------------------------------------------------------\n";
     return 0;
 }
