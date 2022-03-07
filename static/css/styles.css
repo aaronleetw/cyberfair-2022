@@ -89,6 +89,8 @@ img.fleft {
     font-weight: 200;
     text-transform: uppercase;
     color: white;
+    width: 70%;
+    margin-left: 15%;
 }
 .header {
     background-image: var(--header);

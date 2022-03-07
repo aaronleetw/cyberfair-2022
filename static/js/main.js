@@ -22,7 +22,7 @@ $(function () {
 $("#scrollTopBtn").click(function () {
     $("html, body").stop().animate({
         scrollTop: 0
-    }, 300);
+    }, 200);
 });
 
 function moveBackButtons() {
@@ -53,6 +53,7 @@ $(document).ready(function () {
                     <br><br><span class="small text-muted">This message will only show once. 這個訊息只會顯示一次。</span>
                 </div>
                 <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="clickedModal(4)">View the Narrative</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="clickedModal(0)">English Version</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="clickedModal(1)">繁體中文版</button>
                 </div>
@@ -79,11 +80,14 @@ function clickedModal(lang) {
         location.href = "/en/conclusion/team.html";
     } else if (lang == 3) {
         location.href = "/zh/conclusion/team.html";
+    } else if (lang == 4) {
+        location.href = "/en/narrative.html"
     }
 }
 
 function switchLang(lang) {
     currPath = window.location.pathname.substring(0, 5) == "index" || window.location.pathname == '/' ? '/' : window.location.pathname.substring(3);
     if (lang == 'en' && currPath == '/') { location.href = '/'; return; }
+    if (lang == 'zh' && currPath == '/narrative.html') { location.href = '/zh/'; return; }
     location.href = "/" + lang + currPath;
 }

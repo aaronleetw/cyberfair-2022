@@ -94,6 +94,7 @@ void generateFinalFile(string fileName, string titleName, bool lang)
         EachFile << "<link rel=\"stylesheet\" href=\"" << CSS[i] << "\">";
     EachFile << "<meta content=\"text/html;charset=utf-8\" http-equiv=\"Content-Type\"><meta content=\"utf-8\" http-equiv=\"encoding\">";
     EachFile << "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
+    EachFile << "<link rel=\"icon\" href=\"/static/favicon.ico\" type=\"image/x-icon\">";
     string tmp = fWithoutLang;
     if (tmp.find('/') != string::npos)
         tmp = tmp.substr(0, tmp.find('/')) + tmp.substr(tmp.find('/') + 1);
